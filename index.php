@@ -6,9 +6,10 @@
     <title>Todo List</title>
 </head>
 <body>
-    
     <main id="app">
-
+        <h1 v-for="event in todo">
+            {{ event.event }}
+        </h1>
     </main>    
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

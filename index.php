@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo List</title>
+
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <main id="app">
-        <h1 v-for="event in todo">
-            {{ event.event }}
-        </h1>
-
-        <form action="./addiction.php" method="POST">
-            <input type="text" name="text" id="text">
-            <button type="submit">Invia</button>
-        </form>
+        <h1>TODO LIST</h1>
+        <section id="todo-container">
+            <ul>
+                <li v-for="(event,index) in todo" 
+                    @click="event.completed = !event.completed" 
+                    :class="(event.completed == true) ? 'completed' : ''">
+                        {{ event.event }}
+                </li>
+            </ul>
+        </section>
+        <section id="form-container">
+            <form action="./addiction.php" method="POST">
+                <input type="text" name="text" id="text" placeholder="Inserisci una nuova task">
+                <button type="submit">Invia</button>
+            </form>
+        </section>
     </main>    
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

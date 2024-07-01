@@ -10,9 +10,7 @@ createApp({
         getData: function() {
             axios.get('./server.php')
                 .then((response) => {
-                    console.log(response.data);
                     this.todo = response.data;
-                    console.log(this.todo);
                 })
                 .catch(function(error) {
                     console.log(error);

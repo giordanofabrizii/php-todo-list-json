@@ -10,6 +10,11 @@
         <h1 v-for="event in todo">
             {{ event.event }}
         </h1>
+
+        <form action="./addiction.php" method="POST">
+            <input type="text" name="text" id="text">
+            <button type="submit">Invia</button>
+        </form>
     </main>    
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>

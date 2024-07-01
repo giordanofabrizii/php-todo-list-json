@@ -1,6 +1,6 @@
 <?php 
 
-if(isset($_POST['text'])) {
+if(isset($_POST['text']) && strlen($_POST['text']) > 0) {
 
     // # prendo i dati dal json
     $rawtodo = file_get_contents('./db/todo.json');
@@ -18,6 +18,7 @@ if(isset($_POST['text'])) {
     file_put_contents('./db/todo.json', $data);
 
 }
+
 header('location: ./index.php');
 
 ?>

@@ -17,8 +17,8 @@
                         {{ event.event }}
                     </h2>
                     <form action="./delete.php" method="POST">
-                        <input type="hidden" name="delete" :value="index">
-                        <button type="submit">X</button>
+                        <!-- <input type="hidden" name="delete" :value="index"> -->
+                        <button name="delete" :value="index" type="submit">X</button>
                     </form>
                 </li>
             </ul>

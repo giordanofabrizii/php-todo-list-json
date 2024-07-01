@@ -35,11 +35,20 @@ li{
     font-size: 1.5rem;
     border-radius: 8px;
     padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+li > h2{
+    width: max-content;
 }
 
 .completed{
-    text-decoration: line-through;
     background-color: rgb(0, 38, 255) !important;
+}
+
+.completed > h2 {
+    text-decoration: line-through;
 }
 
 form{

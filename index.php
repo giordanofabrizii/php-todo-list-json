@@ -12,10 +12,14 @@
         <h1>TODO LIST</h1>
         <section id="todo-container">
             <ul>
-                <li v-for="(event,index) in todo" 
-                    @click="event.completed = !event.completed" 
-                    :class="(event.completed == true) ? 'completed' : ''">
+                <li v-for="(event,index) in todo"  :class="(event.completed == true) ? 'completed' : ''">
+                    <h2 @click="event.completed = !event.completed">
                         {{ event.event }}
+                    </h2>
+                    <form action="./delete.php" method="POST">
+                        <input type="hidden" name="delete" :value="index">
+                        <button type="submit">X</button>
+                    </form>
                 </li>
             </ul>
         </section>
